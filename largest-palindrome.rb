@@ -8,11 +8,11 @@ def generate_multi_array value
       a << x * y
     end
   end
-  a
+  a.sort.reverse
 end
 
 def select_palindromic array
-  array.select do |x|
+  array.find do |x|
     x.to_s == x.to_s.reverse
   end
 end
@@ -20,6 +20,5 @@ end
 # the parameter value below represents the number of digits
 def largest_palindrome value
   array = generate_multi_array value
-  filter_array = select_palindromic array
-  filter_array.max
+  select_palindromic array
 end
